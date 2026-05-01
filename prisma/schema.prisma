@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id          String       @id @default(uuid())
+  username    String       @unique
+  email       String       @unique
+  password    String
+  role        String       @default("user")
+  createdAt   DateTime     @default(now())
+
+  submissions Submission[]
+}
+
+model Puzzle {
+  id           String       @id @default(uuid())
+  title        String
+  description  String
+  difficulty   String
+  solutionHash String
+  dateActive   DateTime
+
+  submissions Submission[]
+}
+
+model Submission {
+  id         String   @id @default(uuid())
+  userId     String
+  puzzleId   String
+  isCorrect  Boolean
+  timeTaken  Int
+  createdAt  DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id])
+  puzzle     Puzzle   @relation(fields: [puzzleId], references: [id])
+}
+
+model PendingUser {
+  id        String   @id @default(uuid())
+  username  String   
+  email     String   @unique
+  password  String
+  otp       String
+  expiresAt DateTime
+  attempts   Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model AdminUser {
+  id           String     @id @default(uuid())
+  username     String     @unique
+  passwordHash String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+ 
+
+  @@map("admin_users")
+}

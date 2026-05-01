@@ -1,0 +1,97 @@
+
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+	color-scheme: dark;
+	--background: #050403;
+	--foreground: #e8dcc8;
+}
+
+html {
+	background:
+		radial-gradient(circle at top, rgba(142, 187, 29, 0.08), transparent 42%),
+		radial-gradient(circle at 20% 20%, rgba(180, 124, 56, 0.1), transparent 36%),
+		linear-gradient(180deg, #090705 0%, #050403 52%, #020201 100%);
+}
+
+body {
+	min-height: 100vh;
+	background:
+		radial-gradient(circle at 50% 0%, rgba(142, 187, 29, 0.08), transparent 28%),
+		radial-gradient(circle at 85% 12%, rgba(205, 150, 90, 0.08), transparent 24%),
+		linear-gradient(180deg, rgba(18, 13, 8, 0.98), rgba(5, 4, 3, 1));
+	color: #e8dcc8;
+	font-family: var(--font-el-messiri), sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a,
+button {
+	-webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+	background: rgba(142, 187, 29, 0.25);
+	color: #fff6e8;
+}
+
+.font-brand {
+	font-family: var(--font-bj-cree), serif;
+}
+
+.font-nav {
+	font-family: var(--font-el-messiri), sans-serif;
+}
+
+.font-cinzel {
+	font-family: 'Cinzel', serif;
+}
+
+.font-cormorant {
+	font-family: 'Cormorant Garamond', serif;
+}
+
+.font-serif {
+	font-family: 'Playfair Display', serif;
+}
+
+/* Glassmorphism effect utility */
+.glass {
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Glow effect utilities */
+.glow {
+	filter: drop-shadow(0 0 12px rgba(142, 187, 29, 0.6));
+}
+
+.glow-sm {
+	filter: drop-shadow(0 0 8px rgba(142, 187, 29, 0.4));
+}
+
+.glow-lg {
+	filter: drop-shadow(0 0 20px rgba(142, 187, 29, 0.8));
+}
+
+/* Ambient noise texture */
+.bg-noise {
+	background-image: 
+		url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' result='noise' /%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23000' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+	background-size: 200px 200px;
+}
+
+/* Gradient edge (vignette) */
+.bg-gradient-to-edge {
+	background-image: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+}
