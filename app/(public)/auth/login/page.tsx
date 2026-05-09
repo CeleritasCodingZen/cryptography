@@ -211,7 +211,6 @@ export default function LoginPage() {
 
           {/* Floating cryptographic nodes - subtle constellation */}
 
-
           {/* Content - Brand & messaging */}
           <motion.div
             className="relative z-10 flex flex-col justify-between p-16 text-left"
@@ -222,7 +221,7 @@ export default function LoginPage() {
             {/* Top: Brand */}
             <motion.div variants={itemVariants}>
               <h1 className="text-4xl font-bold tracking-widest" style={{ fontFamily: 'Playfair Display, serif' }}>
-                <span className="text-[#E7D7C2]">KRYPTOS</span>
+                <span className="text-[#E7D7C2]"></span>
               </h1>
               <div className="mt-4 h-0.5 w-20 bg-gradient-to-r from-[#8EBB1D] to-transparent" />
             </motion.div>

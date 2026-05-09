@@ -294,9 +294,6 @@ export default function RegisterPage() {
             </svg>
           </div>
 
-          {/* Floating cryptographic nodes - subtle constellation */}
-
-
           {/* Content - Brand & messaging */}
           <motion.div
             className="relative z-10 flex flex-col justify-between p-16 text-left"

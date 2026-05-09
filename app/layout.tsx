@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, El_Messiri } from "next/font/google";
-import Navbar from "@/components/Navbar";
-
+import localFont from "next/font/local";
 import "./globals.css";
 
 const elMessiri = El_Messiri({
@@ -14,6 +13,11 @@ const bjCree = Cinzel({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-bj-cree",
+});
+
+const rune = localFont({
+  src: "../fonts/rune.ttf",
+  variable: "--font-rune",
 });
 
 export const metadata: Metadata = {
@@ -29,14 +33,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${elMessiri.variable} ${bjCree.variable} h-full antialiased scroll-smooth`}
+      className={`${elMessiri.variable} ${bjCree.variable} ${rune.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#050403] relative text-[#E8DCC8]">
-        <Navbar />
-        <main className="pt-[60px]">
-          {children}
-        </main>
-      </body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }

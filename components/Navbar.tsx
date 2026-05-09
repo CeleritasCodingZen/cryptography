@@ -73,12 +73,12 @@ export default function Navbar() {
 					transition={{ duration: 0.3, ease: "easeOut" }}
 					className="relative z-10 flex items-center"
 				>
-					<Link
-						href="/"
-						className="font-brand text-[1.65rem] font-semibold tracking-[0.42em] text-[#95C11F] drop-shadow-[0_0_10px_rgba(149,193,31,0.32)] sm:text-[1.8rem]"
-					>
-						KRYPTOS
-					</Link>
+<Link
+  href="/"
+  className="font-rune text-[1.65rem] font-semibold tracking-[0.42em] text-[#95C11F] drop-shadow-[0_0_10px_rgba(149,193,31,0.32)] sm:text-[1.8rem]"
+>
+ ᚲᚱᛇᛈᛏᛟᛋ
+</Link>
 				</motion.div>
 
 				<div className="relative z-10 hidden items-center gap-10 lg:flex">
